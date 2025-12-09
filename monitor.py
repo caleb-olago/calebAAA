@@ -114,7 +114,7 @@ def infosystem():
             print()
 
             for ext in extensions:
-                print(f"{ext} : {counts[ext]} fichier(s)")
+                print(f"{ext} : {counts[ext]} fichier")
         else:
             print("⚠️  Chemin non valide.")
 
