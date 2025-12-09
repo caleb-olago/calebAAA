@@ -4,6 +4,7 @@ import socket
 import platform
 import distro
 import datetime
+import os
 
 def infosystem():
     while True:
@@ -43,6 +44,7 @@ def infosystem():
         bootime_datetime = datetime.datetime.fromtimestamp(psutil.boot_time())
         Nb_users = psutil.users()
         ip = socket.gethostbyname(hotsname)
+
         print()
         print(" Informations sur le système")
         print()
@@ -75,7 +77,6 @@ def infosystem():
             ram_list.append(info)
             print(info)
 
-        # TOP 3 CPU
         print()
         print("  TOP 3 des processus les plus gourmands en CPU (%)")
         print()
@@ -84,7 +85,6 @@ def infosystem():
         for proc in top_cpu:
             print(f"{proc['name']} : {proc['cpu_percent']} % CPU")
 
-        # TOP 3 RAM
         print()
         print("  TOP 3 des processus les plus gourmands en RAM (%)")
         print()
@@ -93,8 +93,31 @@ def infosystem():
         for proc in top_ram:
             print(f"{proc['name']} : {proc['memory_percent']:.2f} % RAM")
 
+        folder_path = "/home"
+
+        print()
+        print(" Analyse simple des fichiers dans :", folder_path)
+        print()
+
+        extensions = [".txt", ".py", ".pdf", ".jpg"]
+        counts = {ext: 0 for ext in extensions}
+
+        if os.path.isdir(folder_path):
+            for filename in os.listdir(folder_path):
+                _, ext = os.path.splitext(filename.lower())
+                if ext in counts:
+                    counts[ext] += 1
+
+            all = sum(counts.values())
+
+            print("Total fichiers trouvés :", all)
+            print()
+
+            for ext in extensions:
+                print(f"{ext} : {counts[ext]} fichier(s)")
+        else:
+            print("⚠️  Chemin non valide.")
+
         time.sleep(15)
 
 infosystem()
-
-
