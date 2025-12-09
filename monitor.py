@@ -75,3 +75,26 @@ def infosystem():
             ram_list.append(info)
             print(info)
 
+        # TOP 3 CPU
+        print()
+        print("  TOP 3 des processus les plus gourmands en CPU (%)")
+        print()
+
+        top_cpu = sorted(cpu_list, key=lambda x: x['cpu_percent'], reverse=True)[:3]
+        for proc in top_cpu:
+            print(f"{proc['name']} : {proc['cpu_percent']} % CPU")
+
+        # TOP 3 RAM
+        print()
+        print("  TOP 3 des processus les plus gourmands en RAM (%)")
+        print()
+
+        top_ram = sorted(ram_list, key=lambda x: x['memory_percent'], reverse=True)[:3]
+        for proc in top_ram:
+            print(f"{proc['name']} : {proc['memory_percent']:.2f} % RAM")
+
+        time.sleep(15)
+
+infosystem()
+
+
