@@ -9,6 +9,17 @@
     <header>
     <h1>Tableau de bord système</h1>
     <p class="timestamp">Généré le {{ generation_time }}</p>
+    <main>
+        <section id="system">
+        <h2>Informations système</h2>
+        <div class="card">
+            <p><strong>Nom de la machine :</strong> {{ system_hostname }}</p>
+            <p><strong>Système d’exploitation :</strong> {{ os_name }}</p>
+            <p><strong>Durée de fonctionnement (uptime) :</strong> {{ system_uptime }}</p>
+            <p><strong>Nombre d’utilisateurs connectés :</strong> {{ users_count }}</p>
+        </div>
+    </section>
+    </main>
 </header>
 </body>
 </html>
