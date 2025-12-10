@@ -79,13 +79,13 @@ def infosystem():
 
     files_list_html = ""
     for ext, count in counts.items():
-        files_list_html += f"<li>{ext} : <strong>{count}</strong> fichier(s)</li>\n"
+        files_list_html += f"<li>{ext} : <strong>{count}</strong> fichier</li>\n"
 
-    # --- Lecture du template HTML ---
+    # template HTML 
     with open(TEMPLATE_PATH, "r", encoding="utf-8") as f:
         template = f.read()
 
-    # --- Remplacement des placeholders ---
+    #  Remplacement 
     html = template
     html = html.replace("{{CPU_CORES}}", str(cpu_cores))
     html = html.replace("{{CPU_FREQ}}", f"{cpu_frequency:.2f}")
