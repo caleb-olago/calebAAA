@@ -67,7 +67,7 @@ def infosystem():
             print(info)
 
         print()
-        print(" I Liste des processus en cours avec leur consommation RAM (%)")
+        print("  Liste des processus en cours avec leur consommation RAM (%)")
         print()
 
         ram_list = []
@@ -116,7 +116,7 @@ def infosystem():
             for ext in extensions:
                 print(f"{ext} : {counts[ext]} fichier")
         else:
-            print("⚠️  Chemin non valide.")
+            print(" Chemin non valide.")
 
         time.sleep(15)
 
