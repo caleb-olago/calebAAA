@@ -7,7 +7,7 @@ Un script Python collecte les informations de la machine (CPU, RAM, processus, f
 
 Prérequis
 
-Linux (Debian recommandé)
+Linux 
 Python 3
 Apache2
 Modules Python : psutil, distro
