@@ -34,7 +34,7 @@ http://<IP-machine>/dashboard.html
 Fonctionnalités
 
 Monitoring CPU
-Monitoring RAM
+Monitoring RAM 
 Infos système
 Top processus
 Statistiques fichiers
