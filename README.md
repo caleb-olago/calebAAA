@@ -26,7 +26,7 @@ Lancer le script
 python3 monitor.py
 
 Accéder au dashboard
-http://localhost/dashboard.html
+http://localhost/index.html
 
 Depuis une autre machine :
 http://<IP-machine>/dashboard.html
